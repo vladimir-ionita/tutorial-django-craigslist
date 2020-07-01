@@ -2,4 +2,22 @@
 
 {% block content %}
     <h2 style="text-align: center">{{ search_query | title }}</h2>
+
+    <div class="row">
+        {% for listing in listings %}
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="{{ listing.1 }}"><img src="{{ listing.3 }}" alt=""></a>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ listing.0 }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ listing.1 }}">View listing: Price {{ listing.2 }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
